@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -15,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Car>
             {
-                new Car{ ProductId=1, BrandId=1, ColorId=3, ModelYear=2002, DailyPrica=250, Description="22 yaşından küçükler kiralayamaz."},
-                new Car{ ProductId=2, BrandId=1, ColorId=1, ModelYear=2006, DailyPrica=300, Description="22 yaşından küçükler kiralayamaz."},
-                new Car{ ProductId=3, BrandId=2, ColorId=3, ModelYear=2018, DailyPrica=345, Description="24 yaşından küçükler kiralayamaz."},
-                new Car{ ProductId=4, BrandId=2, ColorId=2, ModelYear=1998, DailyPrica=150, Description="22 yaşından küçükler kiralayamaz."},
-                new Car{ ProductId=5, BrandId=3, ColorId=1, ModelYear=2020, DailyPrica=540, Description="350 km uzaktaki yerlere gidilmeye izin verilmez."},
+                new Car{ Id=1, BrandId=1, ColorId=3, ModelYear=2002, DailyPrice=250, Description="22 yaşından küçükler kiralayamaz."},
+                new Car{ Id=2, BrandId=1, ColorId=1, ModelYear=2006, DailyPrice=300, Description="22 yaşından küçükler kiralayamaz."},
+                new Car{ Id=3, BrandId=2, ColorId=3, ModelYear=2018, DailyPrice=345, Description="24 yaşından küçükler kiralayamaz."},
+                new Car{ Id=4, BrandId=2, ColorId=2, ModelYear=1998, DailyPrice=150, Description="22 yaşından küçükler kiralayamaz."},
+                new Car{ Id=5, BrandId=3, ColorId=1, ModelYear=2020, DailyPrice=540, Description="350 km uzaktaki yerlere gidilmeye izin verilmez."},
 
             };
         }
@@ -37,14 +38,14 @@ namespace DataAccess.Concrete.InMemory
         public void Delete(Car product)
         {
             Car productToDelete = null;
-            productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);//LİNQ singleordefault tek bir eleman bulmaya yarar (=>Lambda) yukarıdaki foreach yerine bunu kısayol haline getirdik.
+            productToDelete = _products.SingleOrDefault(p => p.Id == product.Id);//LİNQ singleordefault tek bir eleman bulmaya yarar (=>Lambda) yukarıdaki foreach yerine bunu kısayol haline getirdik.
             _products.Remove(productToDelete);
         }
 
         public void Update(Car product)
         {
             Car productToUpdate = null;
-            productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
+            productToUpdate = _products.SingleOrDefault(p => p.Id == product.Id);
             _products.Remove(productToUpdate);
         }
 
@@ -58,6 +59,14 @@ namespace DataAccess.Concrete.InMemory
             return _products.Where(p => p.ColorId == colorId).ToList();
         }
 
-        
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car Get(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
