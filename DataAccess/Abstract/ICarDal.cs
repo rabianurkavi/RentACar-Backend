@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +18,6 @@ namespace DataAccess.Abstract
         List<Car> GetAllByBrand(int brandId);//ürünleri kategoriye göre filtrele(listele)
         List<Car> GetAllByColor(int colorId);//ürünleri kategoriye göre filtrele
       */
-
+        List<CarDetailsDto> GetCarDetails();
     }
 }
