@@ -9,8 +9,14 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-             CarText();
-             BrandText();
+             //CarText();
+             //BrandText();
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.GetRentalDetails();
+            foreach (var data in result.Data)
+            {
+                Console.WriteLine(data.CarName );
+            }
             Console.ReadKey();
         }
 
@@ -22,7 +28,7 @@ namespace ConsoleUI
                 Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
             }
         }
-
+        
         private static void CarText()
         {
             CarManager productManager = new CarManager(new EfCarDal());
