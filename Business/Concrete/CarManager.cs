@@ -54,7 +54,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Car>(_carDal.Get(P => P.ColorId == id));
         }
 
-        public IDataResult<List<Car>> SetCarsDailyPrice(decimal min)
+        public IDataResult<List<Car>> GetCarsDailyPrice(decimal min)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.DailyPrice>=0));
         }
