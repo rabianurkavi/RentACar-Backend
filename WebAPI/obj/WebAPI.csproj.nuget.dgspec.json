@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\Desktop\\Github\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\Desktop\\Github\\Business\\Business.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Business\\Business.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\Business\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -33,11 +28,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj"
               }
             }
           }
@@ -52,6 +47,18 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -73,23 +80,18 @@
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -114,6 +116,22 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.11, )"
@@ -139,23 +157,18 @@
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -168,8 +181,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj"
               }
             }
           }
@@ -209,23 +222,18 @@
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -238,8 +246,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj"
               }
             }
           }
@@ -275,23 +283,18 @@
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\Github\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -304,17 +307,17 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\Github\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Business\\Business.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Business\\Business.csproj"
               },
-              "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj"
               },
-              "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Entities\\Entities.csproj"
+              "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Entities\\Entities.csproj"
               }
             }
           }
@@ -328,6 +331,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

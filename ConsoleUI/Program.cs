@@ -10,12 +10,18 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
              //CarText();
-             //BrandText();
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            var result = rentalManager.GetRentalDetails();
-            foreach (var data in result.Data)
+             BrandText();
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //var result = rentalManager.GetRentalDetails();
+            //foreach (var data in result.Data)
+            //{
+            //    Console.WriteLine(data.CarName );
+            //}
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            var result = customerManager.GetAll();
+            foreach (var item in result.Data)
             {
-                Console.WriteLine(data.CarName );
+                Console.WriteLine(item.CompanyName);
             }
             Console.ReadKey();
         }
@@ -23,10 +29,15 @@ namespace ConsoleUI
         private static void BrandText()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var brand in brandManager.GetAll().Data)
+            var result = brandManager.GetAll();
+            if(result.Success)
             {
-                Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
+                foreach (var brand in result.Data)
+                {
+                    Console.WriteLine( "/" + brand.BrandName);
+                }
             }
+           
         }
         
         private static void CarText()

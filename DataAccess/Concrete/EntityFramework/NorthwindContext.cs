@@ -11,7 +11,7 @@ namespace DataAccess.Concrete.EntityFramework
         //nereye bağlanacağı
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-J3FG52P2;Database=Project;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=RentACar;Trusted_Connection=true");
         }
         //veri tabanını projedeki classlarla bağla
         public DbSet<Car> Cars { get; set; }

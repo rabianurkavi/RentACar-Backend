@@ -14,6 +14,10 @@ namespace WebAPI.Controllers
     public class CarBrandsController : ControllerBase
     {
         IBrandService _brandService;
+        public CarBrandsController(IBrandService brandService)
+        {
+            _brandService = brandService;
+        }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

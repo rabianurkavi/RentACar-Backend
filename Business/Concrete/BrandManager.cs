@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.ValidationAspect;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -17,6 +19,7 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(CarBrand carBrand)
         {
             _brandDal.Add(carBrand);
@@ -31,7 +34,7 @@ namespace Business.Concrete
 
         public IDataResult<List<CarBrand>> GetAll()
         {
-            return new SuccessDataResult<List<CarBrand>>(_brandDal.GetAll());
+            return new SuccessDataResult<List<CarBrand>>(_brandDal.GetAll(),Messages.BrandsListed);
         }
 
         public IDataResult<CarBrand> GetById(int brandid)

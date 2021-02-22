@@ -14,6 +14,10 @@ namespace WebAPI.Controllers
     public class CarColorsController : ControllerBase
     {
         IColorService _colorService;
+        public CarColorsController(IColorService colorService)
+        {
+            _colorService = colorService;
+        }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

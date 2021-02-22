@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj": {}
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj": {
+    "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\Github\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hakan\\Desktop\\ReCapProj\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hakan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -45,6 +40,22 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.11, )"
