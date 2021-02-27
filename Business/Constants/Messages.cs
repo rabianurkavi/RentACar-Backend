@@ -29,11 +29,17 @@ namespace Business.Constants
         public static string CustomerAdded = "Müşteri eklendi";
         public static string CustomerDeleted = "Müşteri silindi";
         public static string CustomerUpdated = "Müşteri güncellendi";
-        public static string CustomersListed = "Müşteriler güncellendi";
+        public static string CustomersListed = "Müşteriler lsitelendi";
 
         public static string UserAdded = "Kullanıcı eklendi";
         public static string UserDeleted = "Kullanıcı silindi";
         public static string UserUpdated = "Kullanıcı güncellendi";
         public static string UsersListed = "Kullanıcılar listelendi.";
+
+        public static string CarImageAdded = "Resim eklendi";
+        public static string CarImageDeleted = "Resim silindi";
+        public static string CarImageUpdated = "Resim güncellendi";
+        public static string CarImagesListed = "Resim listelendi.";
+        public static string CarImagesLimitExceeded = "Resim limiti aşıldı.";
     }
 }

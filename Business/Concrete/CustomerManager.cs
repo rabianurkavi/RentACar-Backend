@@ -40,7 +40,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Customer>(_customerDal.Get(p => p.Id == id));
         }
-
+        [ValidationAspect(typeof(CustomerValidator))]
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);

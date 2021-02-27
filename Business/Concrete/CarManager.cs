@@ -22,14 +22,11 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            if(car.CarName.Length<2)
-            {
-                return new ErrorResult(Messages.CarNameInvalid);
-            }
+            //business code
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
@@ -61,7 +58,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.DailyPrice>=0));
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
             if(car.CarName.Length<2)

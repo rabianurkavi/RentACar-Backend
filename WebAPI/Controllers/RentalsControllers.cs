@@ -14,6 +14,10 @@ namespace WebAPI.Controllers
     public class RentalsControllers : ControllerBase
     {
         IRentalService _rentalService;
+        public RentalsControllers(IRentalService rentalService)
+        {
+            _rentalService = rentalService;
+        }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

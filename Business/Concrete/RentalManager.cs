@@ -33,6 +33,7 @@ namespace Business.Concrete
             _rentalDal.Delete(rental);
             return new SuccessResult(Messages.RentalDeleted);
         }
+        [ValidationAspect(typeof(RentalValidator))]
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);

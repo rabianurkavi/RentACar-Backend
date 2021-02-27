@@ -24,7 +24,7 @@ namespace Business.Concrete
             _colordal.Add(carColor);
             return new SuccessResult(Messages.ColorAdded);
         }
-
+        [ValidationAspect(typeof(ColorValidator))]
         public IResult Delete(CarColor carColor)
         {
             _colordal.Delete(carColor);
