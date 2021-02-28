@@ -141,3 +141,4 @@ C:\Users\Hakan\Desktop\ReCapProj\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\Hakan\Desktop\ReCapProj\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\Hakan\Desktop\ReCapProj\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Hakan\Desktop\ReCapProj\WebAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Hakan\Desktop\ReCapProj\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
