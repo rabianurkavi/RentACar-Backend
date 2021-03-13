@@ -18,6 +18,6 @@ namespace DataAccess.Abstract
         List<Car> GetAllByBrand(int brandId);//ürünleri kategoriye göre filtrele(listele)
         List<Car> GetAllByColor(int colorId);//ürünleri kategoriye göre filtrele
       */
-        List<CarDetailsDto> GetCarDetails();
+        List<CarDetailsDto> GetAllCarDetails();
     }
 }

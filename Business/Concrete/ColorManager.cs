@@ -24,7 +24,7 @@ namespace Business.Concrete
             _colordal.Add(carColor);
             return new SuccessResult(Messages.ColorAdded);
         }
-        [ValidationAspect(typeof(ColorValidator))]
+        
         public IResult Delete(CarColor carColor)
         {
             _colordal.Delete(carColor);
@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         public IDataResult<List<CarColor>> GetAll()
         {
-             return new SuccessDataResult<List<CarColor>>(_colordal.GetAll());
+             return new SuccessDataResult<List<CarColor>>(_colordal.GetAll(),Messages.ColorsListed);
         }
 
         public IDataResult<CarColor> GetById(int colorid)
@@ -42,6 +42,11 @@ namespace Business.Concrete
             return new SuccessDataResult<CarColor>(_colordal.Get(p => p.ColorId == colorid));
         }
 
-       
+        public IResult Update(CarColor carColor)
+        {
+            _colordal.Update(carColor);
+            return new SuccessResult(Messages.ColorUpdated);
+        }
+
     }
 }

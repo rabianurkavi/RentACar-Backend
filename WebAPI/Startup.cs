@@ -34,6 +34,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin", builder => builder.WithOrigins("http://localhost:44332"));
+            });
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -62,11 +66,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
-
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:55120", "http://localhost:4200").AllowAnyHeader());
+ 
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -82,7 +83,8 @@ namespace WebAPI
                 endpoints.MapControllers();
             });
 
-            app.Run(async (context) => {
+            app.Run(async (context) =>
+            {
                 await context.Response.WriteAsync("Could not Find Anything");
             });
         }

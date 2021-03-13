@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
             _carservice = carService;
         }
         [HttpGet("getall")]
-        [Authorize(Roles ="Car.List")]
+       //[Authorize(Roles ="Car.List")]
         public IActionResult GetAll()
         {
             var result = _carservice.GetAll();
@@ -80,10 +80,10 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result); 
         }
-        [HttpGet("getcardetails")]
+        [HttpGet("getalldetails")]
         public IActionResult GetCarDetails()
         {
-            var result = _carservice.GetCarDetails();
+            var result = _carservice.GetAllCarDetails();
             if(result.Success)
             {
                 return Ok(result);

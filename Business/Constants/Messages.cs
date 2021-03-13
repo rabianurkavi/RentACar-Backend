@@ -20,6 +20,7 @@ namespace Business.Constants
 
         public static string ColorAdded = "Renk eklendi";
         public static string ColorDeleted = "Renk silindi";
+        public static string ColorUpdated = "Renk Güncellendi";
         public static string ColorsListed = "Renkler listelendi";
 
         public static string RentalAdded = "Kira eklendi";
@@ -53,5 +54,7 @@ namespace Business.Constants
         public static string AccessTokenCreated = "Token Oluşturuldu.";
 
         public static string CarNameAlreadyExists = "Aynı isimde araba zaten mevcut";
+
+        public static string FailedCarListed = "Araba listelenmesi başarısız."; 
     }
 }

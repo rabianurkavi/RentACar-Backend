@@ -47,7 +47,19 @@ namespace WebAPI.Controllers
                 return Ok(result);
             }
             return BadRequest(result);
-        }       
+        }
+
+        [HttpPut("update")]
+        public IActionResult Update(CarColor color)
+        {
+            var result = _colorService.Update(color);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpDelete("delete")]
         public IActionResult Delete(CarColor color)
         {

@@ -46,10 +46,10 @@ namespace Business.Concrete
             _carDal.Delete(car);
             return new SuccessResult(Messages.CarDeleted);
         }
-        [PerformanceAspect(5)]
+        //[PerformanceAspect(5)]
         public IDataResult<List<Car>> GetAll()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(100);
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
         [SecuredOperation("Car.List")]
@@ -59,10 +59,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.BrandId == brandid).ToList());
         }
 
-        public IDataResult<List<CarDetailsDto>> GetCarDetails()
+        public IDataResult<List<CarDetailsDto>> GetAllCarDetails()
         {
-            return new SuccessDataResult<List<CarDetailsDto>>(_carDal.GetCarDetails());
-
+            var result = _carDal.GetAllCarDetails();
+            
+                return new SuccessDataResult<List<CarDetailsDto>>(result); 
         }
 
         public IDataResult<List<Car>> GetCarsByBrandId(int id)
