@@ -43,7 +43,7 @@ namespace ConsoleUI
         private static void CarText()
         {
             CarManager productManager = new CarManager(new EfCarDal());
-            foreach (var product in productManager.GetCarDetails().Data)
+            foreach (var product in productManager.GetCarsDetails().Data)
             {
                 Console.WriteLine(product.CarId+"/"+product.CarName+"/"+product.BrandName+"/"+product.ColorName+"/"+product.DailyPrice);
             }

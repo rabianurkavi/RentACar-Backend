@@ -65,9 +65,14 @@ namespace Business.Concrete
             _carImageDal.Update(carImage);
             return new SuccessResult(Messages.CarImageUpdated);
         }     
-        public IDataResult<CarImage> Get(int id)
+        public IDataResult<List<CarImage>> GetImagesByCarId(int id)
         {
-            throw new NotImplementedException();
+            IResult result = BusinessRules.Run(CheckIfCarImageNull(id));
+            if(result!=null)
+            {
+                return new ErrorDataResult<List<CarImage>>(result.Message);
+            }
+            return new SuccessDataResult<List<CarImage>>(CheckIfCarImageNull(id).Data);
         }
 
         public IDataResult<CarImage> GetByCarId(int id)
@@ -104,6 +109,11 @@ namespace Business.Concrete
             }
 
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(p => p.CarId == id).ToList());
+        }
+
+        public IDataResult<CarImage> Get(int id)
+        {
+            return new SuccessDataResult<CarImage>(_carImageDal.Get(p => p.Id == id));
         }
     }
 }

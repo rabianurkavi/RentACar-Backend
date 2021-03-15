@@ -46,24 +46,35 @@ namespace Business.Concrete
             _carDal.Delete(car);
             return new SuccessResult(Messages.CarDeleted);
         }
-        //[PerformanceAspect(5)]
+        [PerformanceAspect(5)]
         public IDataResult<List<Car>> GetAll()
         {
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
-        [SecuredOperation("Car.List")]
-        [CacheAspect(duration: 10)]
-        public IDataResult<List<Car>> GetAllByBrand(int brandid)
-        {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.BrandId == brandid).ToList());
-        }
+        //[SecuredOperation("Car.List")]
+        
+        //public IDataResult<List<Car>> GetAllByBrand(int brandid)
+        //{
+        //    return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.BrandId == brandid));
+        //}
 
-        public IDataResult<List<CarDetailsDto>> GetAllCarDetails()
+        public IDataResult<List<CarDetailsDto>> GetCarDetails()
         {
             var result = _carDal.GetAllCarDetails();
             
-                return new SuccessDataResult<List<CarDetailsDto>>(result); 
+                return new SuccessDataResult<List<CarDetailsDto>>(result,Messages.CarsListed); 
+        }
+
+        public IDataResult<List<CarDetailsDto>> GetCarDetail(int carId)
+        {
+            return new SuccessDataResult<List<CarDetailsDto>>(_carDal.GetCarsDetail(cardetail => cardetail.CarId == carId));
+        }
+
+        public IDataResult<List<CarDetailsDto>> GetCarDetailsByModelYear(short min, short max)
+        {
+            return new SuccessDataResult<List<CarDetailsDto>>(_carDal.GetCarsDetail(
+                cardetail => cardetail.ModelYear <= min && cardetail.ModelYear >= max));
         }
 
         public IDataResult<List<Car>> GetCarsByBrandId(int id)
@@ -71,14 +82,27 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(P => P.BrandId == id));
         }
 
-        public IDataResult<Car> GetCarsByColorId(int id)
+        public IDataResult<List<CarDetailsDto>> GetCarsByColorId(int colorid)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(P => P.ColorId == id));
+            return new SuccessDataResult<List<CarDetailsDto>>(_carDal.GetCarsDetail(P => P.ColorId == colorid));
         }
 
         public IDataResult<List<Car>> GetCarsDailyPrice(decimal min)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.DailyPrice>=0));
+        }
+
+        public IDataResult<List<CarDetailsDto>> GetCarsDetailByBrandId(int brandId)
+        {
+            List<CarDetailsDto> carDetails = _carDal.GetCarsDetail(p => p.BrandId == brandId);
+            if (carDetails == null)
+            {
+                return new ErrorDataResult<List<CarDetailsDto>>("");
+            }
+            else
+            {
+                return new SuccessDataResult<List<CarDetailsDto>>(carDetails, "");
+            }
         }
 
         [TransactionScopeAspect]
