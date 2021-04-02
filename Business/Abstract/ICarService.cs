@@ -19,7 +19,7 @@ namespace Business.Abstract
         IResult Update(Car car);
         IDataResult<List<CarDetailsDto>> GetCarDetailsByModelYear(short min, short max);
         IDataResult<List<CarDetailsDto>> GetCarDetail(int carId);
-
+        IDataResult<List<CarDetailsDto>> GetCarsFiltreDetails(CarDetailFilterDto filterDto);
         IResult TransactionalOperation(Car car);
     }
 }

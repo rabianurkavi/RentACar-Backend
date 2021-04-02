@@ -39,6 +39,11 @@ namespace Business.Constants
         public static string UserUpdated = "Kullanıcı güncellendi";
         public static string UsersListed = "Kullanıcılar listelendi.";
 
+        public static string CardAdded = "Kart eklendi";
+        public static string CardDeleted = "Kart silindi";
+        public static string CardUpdated = "Kart Güncellendi";
+        public static string CardsListed = "Kartlar listelendi";
+
         public static string CarImageAdded = "Resim eklendi";
         public static string CarImageDeleted = "Resim silindi";
         public static string CarImageUpdated = "Resim güncellendi";

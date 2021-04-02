@@ -47,5 +47,7 @@ namespace Business.Concrete
             _brandDal.Update(carBrand);
             return new SuccessResult(Messages.BrandUpdated);
         }
+       
+
     }
 }

@@ -89,5 +89,10 @@ namespace DataAccess.Concrete.InMemory
         {
             throw new NotImplementedException();
         }
+
+        public List<CarDetailsDto> GetAllCarDetailsByFilter(CarDetailFilterDto filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
