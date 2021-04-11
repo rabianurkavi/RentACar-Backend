@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -27,6 +28,17 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
+            return BadRequest(result);
+        }
+        [HttpGet("getbyuserid")]
+        public IActionResult GetByUserId(int userId)
+        {
+            var result = _userService.GetByUserId(userId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
             return BadRequest(result);
         }
         [HttpGet("GetById")]
@@ -66,6 +78,33 @@ namespace WebAPI.Controllers
             if (result.Success)
             {
                 return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("updateprofile")]
+        public IActionResult ProfileUpdate(UserForUpdateDto userForUpdateDto)
+        {
+            var result = _userService.EditProfil(userForUpdateDto.User, userForUpdateDto.Password);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("email")]
+        public IActionResult GetByMail(string email)
+        {
+            var result = _userService.GetUserByEmail(email);
+            if (result.Success)
+            {
+                return Ok(new
+                {
+                    result.Data.Id,
+                    result.Data.FirstName,
+                    result.Data.LastName,
+                    result.Data.Email,
+                    result.Data.Status
+                });
             }
             return BadRequest(result);
         }

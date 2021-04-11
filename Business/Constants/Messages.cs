@@ -61,6 +61,14 @@ namespace Business.Constants
 
         public static string CarNameAlreadyExists = "Aynı isimde araba zaten mevcut";
 
-        public static string FailedCarListed = "Araba listelenmesi başarısız."; 
+        public static string FailedCarListed = "Araba listelenmesi başarısız.";
+
+        public static string FindeksAdded = "Findeks puanı  eklendi";
+        public static string FindeksDeleted = "Findeks puanı silindi";
+        public static string FindeksUpdated = "Findeks puanı  güncellendi";
+
+        public static string CarFindeksAdded = "Araba findeks  eklendi";
+        public static string CarFindeksDeleted = "Araba findeks puanı silindi";
+        public static string CarFindeksUpdated = "Araba findeks güncellendi";
     }
 }

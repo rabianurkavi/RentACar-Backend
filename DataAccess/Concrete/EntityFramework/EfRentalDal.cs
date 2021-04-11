@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on car.BrandId equals b.BrandId
 
                              join cus in context.Customers
-                             on rental.CustomerId equals cus.Id
+                             on rental.CustomerId equals cus.CustomerId
 
                              join us in context.Users
                              on cus.UserId equals us.Id

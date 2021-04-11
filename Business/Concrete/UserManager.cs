@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.ValidationAspect;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
+using Core.Utilities.Security.Hashing;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -32,6 +34,24 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserDeleted);
         }
 
+        public IResult EditProfil(User user, string password)
+        {
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            var updatedUser = new User
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Status = user.Status
+            };
+            _userDal.Update(updatedUser);
+            return new SuccessResult(Messages.UserUpdated);
+        }
+
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
@@ -47,9 +67,15 @@ namespace Business.Concrete
             return (_userDal.Get(u => u.Email == email));
         }
 
+        [CacheAspect]
         public List<OperationClaim> GetClaims(User user)
         {
-            return (_userDal.GetClaims(user));
+            return new List<OperationClaim>(_userDal.GetClaims(user));
+        }
+
+        public IDataResult<User> GetUserByEmail(string email)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
         }
 
         [ValidationAspect(typeof(UserValidator))]
@@ -57,6 +83,11 @@ namespace Business.Concrete
         {
             _userDal.Update(user);
             return new SuccessResult(Messages.UserUpdated);
+        }
+        [CacheAspect]
+        public IDataResult<User> GetByUserId(int userId)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u => u.Id == userId));
         }
     }
 }

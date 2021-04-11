@@ -40,12 +40,12 @@ namespace Business.Concrete
 
         public IDataResult<Card> GetById(int id)
         {
-            return new SuccessDataResult<Card>(_cardDal.Get(c => c.CardId == id));
+            return new SuccessDataResult<Card>(_cardDal.Get(c => c.Id == id));
         }
 
         public IResult IsCardExist(Card card)
         {
-            var result = _cardDal.Get(c => c.FullName == card.FullName && c.CardNumber == card.CardNumber && c.Cvv == card.Cvv);
+            var result = _cardDal.Get(c => c.NameOnTheCard == card.NameOnTheCard && c.CardNumber == card.CardNumber && c.Cvv == card.Cvv);
             if (result == null)
             {
                 return new ErrorResult();
